@@ -1,0 +1,18 @@
+$main-color: #99ca3c;
+.icons {
+    margin: auto;
+}
+.icons a {
+    font-size: 25px;
+    padding: 15px;
+    color: black;
+    margin-right: 30px;
+}
+.icons a:hover {
+    color: $main-color;
+    transition: all 0.8s;
+}
+textarea:focus {
+    box-shadow: 0 0 0 0.25rem rgba(95, 129, 95, 0.39) !important;
+    border-color: #587522 !important;
+}

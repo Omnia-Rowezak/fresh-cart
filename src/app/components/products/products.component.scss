@@ -1,0 +1,13 @@
+.item {
+    overflow: hidden;
+    }
+.item img {
+    width: 100%;
+    transition: all 0.8s;
+    }
+.item:hover img {
+    scale: 1.1;
+    }
+.section {
+    background-color: #fff;
+}

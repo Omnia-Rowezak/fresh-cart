@@ -1,0 +1,28 @@
+<section *ngIf="products.length > 0" class="py-3 w-75 mx-auto my-3">
+    <h2 class="text-center">All Products</h2>
+    <input type="text" class="w-50 mx-auto form-control my-3" placeholder="Search...." [(ngModel)]="term">
+    <!-- <input type="text" class="w-50 mx-auto form-control my-3" [(ngModel)]="minPrice" >
+    <input type="text" class="w-50 mx-auto form-control my-3" [(ngModel)]="maxPrice" > -->
+    <div class="row g-4">
+        <div *ngFor="let product of products | search:term " class="col-sm-6 col-md-4 col-lg-3">
+            
+            <div role="button" [routerLink]="['/productdetails', product.id]">
+                <div class="item">
+                    <img [src]="product.imageCover" [title]="product.title" [alt]="product.title">
+                </div>
+                <h2 class="h4">{{product.title | cuttext:3 }}</h2>
+                <span class="text-main">{{product.productCategory}}</span>
+                <!-- <p class="m-0">Brand: <span class="text-main">{{product.productBrand}}</span></p> -->
+                <div class="d-flex align-items-center justify-content-between my-3">
+                    <span>{{product.price | currency:'EGP'}}</span>
+                    <span>
+                        {{product.ratingsAverage}} <i class="fas fa-star rating-color"></i> 
+                    </span>
+                </div>
+            </div>
+            <div>
+            <button (click)="addProduct(product.id, btnAdd)" #btnAdd class="main-btn w-100">+ Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+        </div>
+    </div>
+</section>

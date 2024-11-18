@@ -1,0 +1,10 @@
+$main-color: #99ca3c;
+.nav-item a {
+    color:black;
+}
+.dropdown-item:hover {
+    background-color: $main-color;
+}
+nav {
+    transition: padding 1s;
+}

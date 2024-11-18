@@ -1,0 +1,159 @@
+<section class="py-5 my-5 w-75 mx-auto">
+    <div class="row g-0">
+        <div class="col-md-12">
+            <owl-carousel-o [options]="mainSliderOptions">
+                <ng-template carouselSlide>
+                    <img height="400" src="./assets/main-slider-2.jpeg" alt="">
+                </ng-template>
+                <ng-template carouselSlide>
+                    <img height="400" src="./assets/main-slider-1.jpeg" alt="">
+                </ng-template> 
+                <ng-template carouselSlide>
+                    <img height="400" src="./assets/main-slider-3.jpeg" alt="">
+                </ng-template>
+            </owl-carousel-o>
+
+        </div>
+    </div>
+</section>
+
+<section class="category py-3 mx-auto" *ngIf="categories.length > 0">
+    <h2>Our Categories</h2>
+    <section class="py-5 w-75 mx-auto bg-white">
+
+        <owl-carousel-o [options]="categoryOptions">
+
+            <ng-container *ngFor="let category of categories">
+              <ng-template carouselSlide>
+                <img height="300px" [src]="category.image" [alt]="category.name" [title]="category.name">
+                <h3 class="h6 text-main">{{category.name}}</h3>
+              </ng-template>
+            </ng-container>
+        
+          </owl-carousel-o>
+
+        <!-- <owl-carousel-o [options]="categoryOptions">
+            <ng-template carouselSlide>
+                <img height="350" src="./assets/biodegradable cat1.webp" alt="Biodegradable Products">
+                <h3>Biodegradable Product</h3>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <img height="350" src="./assets/reusablecat2.webp" alt="ReUsable Products">
+                <h3>ReUsable Products</h3>
+            </ng-template>  
+            <ng-template carouselSlide>
+                <img height="350" src="./assets/organicnaturalcat3.webp" alt="Organic & Natural Products">
+                <h3>Organic & Natural Products</h3>
+            </ng-template> 
+            <ng-template carouselSlide>
+                <img height="350" src="./assets/energycat4.jpg" alt="Energy Efficient Products">
+                <h3>Energy Efficient Products</h3>
+            </ng-template> 
+        </owl-carousel-o> -->
+    </section>
+</section>
+
+<section class="py-3" *ngIf="products.length > 0">
+<h2>Featured Products</h2>
+<div class="row g-4 mx-auto w-75">
+    <div *ngFor="let product of products | slice:0:8" class="col-sm-6 col-lg-3">
+    <header role="button" [routerLink]="['/productdetails', product.id]">
+        
+        <div class="p-3 shadow rounded" >
+            <div class="item">
+            <img [src]="product.imageCover" [title]="product.title" [alt]="product.title">
+            </div>
+            <h3 class="h5">{{product.title}}</h3>
+            <div class="d-flex align-items-center justify-content-between">
+                <span>{{product.price | currency:'EGP'}}</span>
+                <span>
+                    {{product.ratingsAverage}} <i class="fas fa-star rating-color"></i> 
+                </span>
+            </div>
+            </div>
+    </header>
+    </div>
+</div>
+<div class="text-center">
+    <button role="button" routerLink="/products" class="main-btn mt-5">View All</button>
+</div>
+</section>
+
+<!-- <h2>Featured Products</h2>
+<section class="py-5">
+    <div class="row">
+        <div class="col-md-6 col-lg-3">
+            <div class="item">
+                <div class="image">
+                <img src="./assets/biodegradable cat1.webp" alt="">
+                </div>
+                <div class="text mt-3">
+                  <div class="title">
+                  <h4>Name Product</h4>
+                  <span>Price</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="item">
+                <div class="image">
+                <img src="./assets/biodegradable cat1.webp" alt="">
+                </div>
+                <div class="text mt-3">
+                  <div class="title">
+                  <h4>Name Product</h4>
+                  <span>Price</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="item">
+                <div class="image">
+                <img src="./assets/biodegradable cat1.webp" alt="">
+                </div>
+                <div class="text mt-3">
+                  <div class="title">
+                  <h4>Name Product</h4>
+                  <span>Price</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <div class="item">
+                <div class="image">
+                <img src="./assets/biodegradable cat1.webp" alt="">
+                </div>
+                <div class="text mt-3">
+                  <div class="title">
+                  <h4>Name Product</h4>
+                  <span>Price</span>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center">
+        <button role="button" routerLink="/products" class="main-btn mt-5">View All</button>
+    </div>
+</section> -->
+
+<!-- <section class="about">
+    <section class="section p-5 w-75 mx-auto shadow my-5 bg-white">
+        <div class="row">
+            <div class="col-md-12 col-lg-6">
+                <h3 class="borders-bottom mb-5">Why you should use our website?</h3>
+                <h5 class="mb-5">Using eco-friendly products is crucial for several reasons, 
+                    impacting not only the environment but also human health, 
+                    economic sustainability, and societal well-being.</h5>
+                <button role="button" routerLink="/about" class="main-btn mb-3">Read More</button>
+            </div>
+            <div class="col-md-12 col-lg-6">
+                <img class="w-100" src="./assets/whyuseourwebsite.jpg" alt="">
+            </div>
+        </div>
+    </section>
+</section> -->
+
